@@ -160,6 +160,7 @@ function App() {
             Update
           </a>
         </li>
+        <li></li>
       </>
     );
   } else if (mode === "CREATE") {
