@@ -123,6 +123,7 @@ function Update(props) {
   );
 }
 
+
 function App() {
   const [mode, setMode] = useState("WELCOME");
   const [id, setId] = useState(null);
@@ -160,7 +161,18 @@ function App() {
             Update
           </a>
         </li>
-        <li></li>
+        <li>
+          <input type="button" value="Delete" onClick={()=>{
+            const newTopcis = []
+            for (let i = 0; i < topics.length; i++) {
+              if (topics[i].id !==id) {
+                newTopcis.push(topics[i])
+              }
+            }
+            setTopics(newTopcis)
+            setMode('WELCOME')
+          }} />
+        </li>
       </>
     );
   } else if (mode === "CREATE") {
